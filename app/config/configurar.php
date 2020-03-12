@@ -1,0 +1,40 @@
+<?php
+////////////////////////////////////
+// Leemos el archivo de configuración
+////////////////////////////////////
+$config = parse_ini_file('config.ini', true);
+
+////////////////////////////////////
+// Conexion a la base de datos
+////////////////////////////////////
+define('DB_HOST', $config['database']['host']);
+define('DB_USER', $config['database']['username']);
+define('DB_PASS', $config['database']['password']);
+define('DB_NAME', $config['database']['schema']);
+
+/////////////////////////////////////
+// Ruta de la aplicacion private
+/////////////////////////////////////
+
+define('RUTA_PUBLIC', '../public/');
+/////////////////////////////////////
+// Ruta de la aplicacion private
+/////////////////////////////////////
+define('RUTA_APP', dirname(dirname(__FILE__)));
+
+////////////////////////////////////
+// Ruta de la URL
+// Ejemplo http://localhost/nombreapp
+////////////////////////////////////
+define('RUTA_URL', $config['application']['route']);
+
+//////////////////////////////////////
+// Valores configuracion
+/////////////////////////////////////
+define('ERROR_REPORTING_LEVEL', -1);
+
+/////////////////////////////////////
+// Datos del Sitio
+/////////////////////////////////////
+define('NAME_APP', $config['application']['name']);
+define('VERSION_APP', $config['application']['version']);
